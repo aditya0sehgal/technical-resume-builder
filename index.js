@@ -122,14 +122,6 @@ function print(event) {
     let edu_2_gpa = document.getElementById("edu_2_gpa").value.trim()
     let fullname = firstName+" "+lastName;
 
-    console.log(firstName);
-    console.log(lastName);
-    console.log(email);
-    console.log(github);
-    console.log(linkedin);
-    console.log(website);
-    console.log(bio);
-    
     var currXPosition = 10;
     var currYPosition = 10;
     doc.setFontSize(20)
@@ -261,7 +253,7 @@ function print(event) {
         var splittedText = doc.splitTextToSize(skill_list, 185)
         var lines = splittedText.length  // splitted text is a string array - (doc.getTextWidth(document.getElementById("skill_label_"+(index+1)).innerHTML)+5)
         var blockHeight = lines * lineHeight
-        currYPosition += blockHeight+1
+        currYPosition += blockHeight+2;
     }
     // Java, Javascript, C, C++, Python, R, ML, Ruby, SQL, Node.js, HTML, CSS, numpy, pandas, AI, Data Mining.
 
@@ -303,8 +295,8 @@ function print(event) {
         doc.setFont("Times", "bold", "normal")
         var X = 15;
         console.log(document.getElementById("title_"+(index+1)).value.trim())
-        doc.text(document.getElementById("title_"+(index+1)).value.trim() + `   |   Link : `, X, currYPosition, {maxWidth: 185, align: "justify"});
-        X += doc.getStringUnitWidth(document.getElementById("title_"+(index+1)).value.trim() + `   |   Link : `) * 4 
+        doc.text(document.getElementById("title_"+(index+1)).value.trim() + `  |  Link : `, X, currYPosition, {maxWidth: 185, align: "justify"});
+        X += doc.getStringUnitWidth(document.getElementById("title_"+(index+1)).value.trim() + `   |   Link : `) * 4.5
         // X += 50
         // X = 110
         doc.setTextColor(0, 0, 255);
