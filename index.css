@@ -1,7 +1,40 @@
 #inner-container{
-    border: 1.5px dotted black;
+    /* border: 0.5px dotted black; */
+    box-shadow: 5px 10px 18px #acacac;
+    background-color: whitesmoke;
+}
+
+body{
+    background-color: blanchedalmond;
+    font-family: Georgia, 'Times New Roman', Times, serif
 }
 
 #print-container{
     text-align: center;
+}
+
+h4{
+    font-weight: bold;
+}
+
+h6{
+    font-weight: bold;
+}
+
+h3{
+    font-weight: bold;
+}
+
+h2{
+    font-weight: bold;
+}
+
+#workex_input_group_style{
+    border: 0.5px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px #e6e4e4;
+}
+
+#project_input_group_style{
+    border: 0.5px solid rgb(223, 223, 223);
+    box-shadow: 5px 5px 10px #e6e4e4;
 }

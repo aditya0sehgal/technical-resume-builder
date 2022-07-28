@@ -9,52 +9,151 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container mt-5"> 
-        <div id="inner-container" class="container ml-5 mr-5 p-3"> 
+    <div class="container mb-5 mt-5 p-3"> 
+        <div id="inner-container" class="container"> 
+            <br>
             <center>
-                <h3>Generate resume by filling the form below</h3>
+                <h2>Technical Resume Generator</h2>
             </center>
             <hr>
-            <hr>
+            <h6>Add required field to inputs later</h6>
             <form onsubmit="print(event)">
                 <div class="row mt-2">
-                    <div class="col">
+                    <h4>Personal Information</h4>
+                    <div class="col-md-6">
                         <label for="firstName" class="form-label">First Name</label>
-                        <input type="text" class="form-control" id="firstName" required>
+                        <input type="text" class="form-control" id="firstName">
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <label for="lastName" class="form-label">Last Name</label>
-                        <input type="text" class="form-control" id="lastName" required>
+                        <input type="text" class="form-control" id="lastName">
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col">
+                    <div class="col-md-6">
                         <label for="email" class="form-label">Primary Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="email" required>
+                        <input type="email" class="form-control" id="email" aria-describedby="email">
                     </div>
-                    <div class="col">
+                    <div class="col-md-6">
                         <label for="github" class="form-label">Github Username</label>
-                        <input type="text" class="form-control" id="github" required>
+                        <input type="text" class="form-control" id="github">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="linkedin" class="form-label">LinkedIn Username</label>
+                        <input type="text" class="form-control" id="linkedin">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="website" class="form-label">Portfolio Website URL</label>
+                        <input type="text" class="form-control" id="website">
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="phone" class="form-label">Phone Number (With Country Code. Eg: +91-9955995566)</label>
+                        <input type="text" class="form-control" id="phone">
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <label for="linkedin" class="form-label">LinkedIn Username</label>
-                        <input type="text" class="form-control" id="linkedin" required>
+                        <label for="bio" class="form-label">Bio (Add a 3-4 line bio. Type continuously, don't add a new line manually) </label>
+                        <textarea class="form-control" rows="3" id="bio"></textarea>
                     </div>
-                    <div class="col">
-                        <label for="website" class="form-label">Portfolio Website Link</label>
-                        <input type="text" class="form-control" id="website" required>
+                </div>
+
+                <div class="row mt-5">
+                    <h4>Previous Education [Fill most recent college first]</h4>
+                    <div class="col-md-6">
+                        <label for="edu_1_name" class="form-label">First College/University Name</label>
+                        <input type="text" class="form-control" id="edu_1_name">
+                        <br>
+                        <label for="edu_1_course" class="form-label">First College Degree/Course Name</label>
+                        <input type="text" class="form-control" id="edu_1_course">
+                        <br>
+                        <label for="edu_1_location" class="form-label">First College Location (City and Country)</label>
+                        <input type="text" class="form-control" id="edu_1_location">
+                        <br>
+                        <label for="edu_1_years" class="form-label">First College Dates Attended (Eg: 2017-2021/Present)</label>
+                        <input type="text" class="form-control" id="edu_1_years">
+                        <br>
+                        <label for="edu_1_gpa" class="form-label">First College GPA [Eg: 3/4, 8.5/10, 90%]</label>
+                        <input type="text" class="form-control" id="edu_1_gpa">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="edu_2_name" class="form-label">Second College/University Name</label>
+                        <input type="text" class="form-control" id="edu_2_name">
+                        <br>
+                        <label for="edu_2_course" class="form-label">Second College Degree/Course Name</label>
+                        <input type="text" class="form-control" id="edu_2_course">
+                        <br>
+                        <label for="edu_2_location" class="form-label">Second College Location (City and Country)</label>
+                        <input type="text" class="form-control" id="edu_2_location">
+                        <br>
+                        <label for="edu_2_years" class="form-label">Second College Dates Attended (Eg: 2017-2021)</label>
+                        <input type="text" class="form-control" id="edu_2_years">
+                        <br>
+                        <label for="edu_2_gpa" class="form-label">First College GPA [Eg: 3/4, 8.5/10, 90%]</label>
+                        <input type="text" class="form-control" id="edu_2_gpa">
+                    </div>
+                </div>
+
+                <div class="row mt-5">
+                    <h4>Technical Skills</h4>
+
+                    <div class="col-md-12">
+                        <br>
+                        Enter the skill headings seperated by commas [eg: Languages, Frameworks/Libraries, Cloud Skills]
+                        <input type="text" onchange="skills_input_change(event)" class="form-control" id="skill_headings">
+                    </div>
+                    <div id="skill_inputs">
+                        <div class="row" id="skill_input_group"></div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <h4>Work Experience [ Internship/Job ]</h4>
+                    <label for="workex_count">Number of Work Experiences to add [Maximum 3 experiences]</label>
+                    <div class="col-md-12">
+                        <select class="form-select" onchange="workex_input_change(event)" name="workex_count" id="workex_count">
+                            <option selected>Choose a value</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div id="workex_inputs">
+                        <div class="row" id="workex_input_group"></div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <h4>Projects</h4>
+                    <label for="project_count">Number of Projects to add [Maximum 3 projects]</label>
+                    <div class="col-md-12">
+                        <select class="form-select" onchange="project_input_change(event)" name="project_count" id="project_count">
+                            <option selected>Choose a value</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div id="project_inputs">
+                        <div class="row" id="project_input_group"></div>
                     </div>
                 </div>
                 <br>
                 <div id="print-container" class="container">
                     <button id="submit" type="submit" class="btn btn-primary">Print</button>
                 </div>
+                <br>
             </form>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
