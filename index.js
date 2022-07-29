@@ -134,7 +134,7 @@ function print(event) {
     // at size 20 each character takes about 3 sapces.
     // at size 11 each character takes about 2 sapces.
     doc.setFont("Times", "bold", "normal")
-    doc.text(firstName+" "+lastName , ((pdfWidth/2)-((fullname.length%2==0 ? fullname.length : fullname.length+1)/2)*3), currYPosition);
+    doc.text(firstName+" "+lastName , ((pdfWidth/2)-((fullname.length%2==0 ? fullname.length : fullname.length+1)/2)*3.5), currYPosition);
     doc.setFont("Times", "normal", "normal")
     doc.setFontSize(11)
     doc.text(`[`+phone+`]`, 170, currYPosition);
@@ -321,8 +321,11 @@ function print(event) {
         currYPosition += 3
     }
     
-    window.open(doc.output('bloburl')) 
-    // doc.save(fullname+".pdf");
+    // window.open(doc.output('bloburl')) 
+    // window.open(doc.output("bloburl"), "_blank");
+    doc.save(firstName+"_"+lastName+".pdf");
+    doc = new jsPDF();
+    doc.setFont('times')
 }
 
   
