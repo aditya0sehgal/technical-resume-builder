@@ -124,6 +124,12 @@ function print(event) {
 
     var currXPosition = 10;
     var currYPosition = 10;
+
+    
+    doc.setProperties({
+        title: firstName+"_"+lastName+".pdf"
+    });
+
     doc.setFontSize(20)
     // at size 20 each character takes about 3 sapces.
     // at size 11 each character takes about 2 sapces.
@@ -315,7 +321,8 @@ function print(event) {
         currYPosition += 3
     }
     
-    doc.save(fullname+".pdf");
+    window.open(doc.output('bloburl')) 
+    // doc.save(fullname+".pdf");
 }
 
   
