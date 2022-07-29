@@ -321,7 +321,8 @@ function print(event) {
         currYPosition += 3
     }
     
-    window.open(doc.output('bloburl', { filename: firstName+"_"+lastName+".pdf"}));
+    // window.open(doc.output('bloburl', { 'filename': firstName+"_"+lastName+".pdf" }));
+    doc.output('dataurlnewwindow')
     // doc.save(firstName+"_"+lastName+".pdf");
     doc = new jsPDF();
     doc.setFont('times')
