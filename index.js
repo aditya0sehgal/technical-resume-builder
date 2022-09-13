@@ -197,7 +197,7 @@ function print(event) {
     doc.text(edu_2_course + `   |   GPA: ` + edu_2_gpa, 15, currYPosition);
     
     // try doc.text(align options)
-    currYPosition += 6
+    currYPosition += 7
     doc.setFontSize(14)
     doc.setFont("Times", "bold", "normal")
     doc.text("Technical Skills : ", 10, currYPosition);
@@ -302,7 +302,7 @@ function print(event) {
         var X = 15;
         console.log(document.getElementById("title_"+(index+1)).value.trim())
         doc.text(document.getElementById("title_"+(index+1)).value.trim() + `  |  Link : `, X, currYPosition, {maxWidth: 185, align: "justify"});
-        X += doc.getStringUnitWidth(document.getElementById("title_"+(index+1)).value.trim() + `   |   Link : `) * 4.5
+        X += doc.getStringUnitWidth(document.getElementById("title_"+(index+1)).value.trim() + `   |   Link : `) * 3.5
         // X += 50
         // X = 110
         doc.setTextColor(0, 0, 255);
@@ -322,6 +322,7 @@ function print(event) {
     }
     
     // window.open(doc.output('bloburl', { 'filename': firstName+"_"+lastName+".pdf" }));
+    // doc.output('dataurlnewwindow', { 'filename': firstName+"_"+lastName+".pdf" })
     doc.output('dataurlnewwindow')
     // doc.save(firstName+"_"+lastName+".pdf");
     doc = new jsPDF();

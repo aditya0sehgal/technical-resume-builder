@@ -57,8 +57,8 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <label for="bio" class="form-label">Bio (Add a 3-4 line bio. Type continuously, don't add a new line manually) </label>
-                        <textarea class="form-control" rows="3" id="bio" required></textarea>
+                        <label for="bio" class="form-label">Bio (Add a 1-2 line bio. Type continuously, don't add a new line manually) </label>
+                        <textarea class="form-control" rows="2" id="bio" required></textarea>
                     </div>
                 </div>
 
@@ -93,7 +93,7 @@
                         <label for="edu_2_years" class="form-label">Second College Dates Attended (Eg: 2017-2021)</label>
                         <input type="text" class="form-control" id="edu_2_years">
                         <br>
-                        <label for="edu_2_gpa" class="form-label">First College GPA [Eg: 3/4, 8.5/10, 90%]</label>
+                        <label for="edu_2_gpa" class="form-label">Second College GPA [Eg: 3/4, 8.5/10, 90%]</label>
                         <input type="text" class="form-control" id="edu_2_gpa">
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                 
                 <div class="row mt-5">
                     <h4>Work Experience [ Internship/Job ]</h4>
-                    <label for="workex_count">Number of Work Experiences to add [Maximum 3 experiences]</label>
+                    <label for="workex_count">Number of Work Experiences to add [Ideally a maximum of 3 recent & relevant experiences]</label>
                     <div class="col-md-12">
                         <select class="form-select" onchange="workex_input_change(event)" name="workex_count" id="workex_count">
                             <option selected>Choose a value</option>
@@ -129,13 +129,14 @@
                 
                 <div class="row mt-5">
                     <h4>Projects</h4>
-                    <label for="project_count">Number of Projects to add [Maximum 3 projects]</label>
+                    <label for="project_count">Number of Projects to add [Ideally 3-4 projects]</label>
                     <div class="col-md-12">
                         <select class="form-select" onchange="project_input_change(event)" name="project_count" id="project_count">
                             <option selected>Choose a value</option>
                             <option value="1">One</option>
                             <option value="2">Two</option>
                             <option value="3">Three</option>
+                            <option value="4">Four</option>
                         </select>
                     </div>
                     <div id="project_inputs">
