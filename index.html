@@ -13,7 +13,7 @@
         <div id="inner-container" class="container"> 
             <br>
             <center>
-                <h2>Technical Resume Generator</h2>
+                <h2>Technical Resume Builder</h2> 
             </center>
             <hr>
             <!-- <h6>Add required field to inputs later</h6> -->
@@ -53,6 +53,10 @@
                     <div class="col-md-6">
                         <label for="phone" class="form-label">Phone Number (With Country Code. Eg: +91-9955995566)</label>
                         <input type="text" class="form-control" id="phone" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="currlocation" class="form-label">Current Location</label>
+                        <input type="text" class="form-control" id="currlocation" required>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -108,6 +112,23 @@
                     </div>
                     <div id="skill_inputs">
                         <div class="row" id="skill_input_group"></div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <h4>Research Publications</h4>
+
+                    <label for="research_count">Number of Research Publications to add</label>
+                    <div class="col-md-12">
+                        <select class="form-select" onchange="research_input_change(event)" name="research_count" id="research_count">
+                            <option selected>Choose a value</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div id="research_inputs">
+                        <div class="row" id="research_input_group"></div>
                     </div>
                 </div>
                 
